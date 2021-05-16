@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h1>QR Code Generator</h1>
+	<form action="/showqr">
+	  <label>Input text:</label><br><br>
+	  <input type="text" id="qrdata" name="qrdata"><br><br>
+
+	  <label for="fgcolor">Select foreground color:</label>
+	  <input type="color" id="fgcolor" name="fgcolor" value="#000000"><br><br>
+
+	  <label for="bgcolor">Select background color:</label>
+	  <input type="color" id="bgcolor" name="bgcolor" value="#ffffff"><br><br>
+
+	  <input type="submit" value="Submit">
+	</form>
+{% endblock content %}

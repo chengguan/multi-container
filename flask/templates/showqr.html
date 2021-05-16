@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h1>QR Code Generator</h1>
+
+	<p><a href=/qrrequest>Reset all</a></p>
+	<form action="/showqr">
+		<h3>Set box size:</h3>
+		<input type="hidden" name="qrdata" value="{{ qrdata }}">
+		<input type="hidden" name="fgcolor" value="{{ fgcolor }}">
+		<input type="hidden" name="bgcolor" value="{{ bgcolor }}">
+		<input type="submit" name="resize" value="{{ box_size - 1 }}"> 
+		<input type="submit" name="resize" value="{{ box_size + 1 }}">
+	</form>
+	
+    <img id="qr" src="data:image/jpeg;base64,{{ img_data }}" /><br><br>
+{% endblock content %}
